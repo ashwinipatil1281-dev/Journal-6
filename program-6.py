@@ -1,9 +1,12 @@
-P = float(input("Enter the principal amount (P): "))
-R = float(input("Enter the annual interest rate (R) in %: "))
-T = float(input("Enter the time period (T) in years: "))
+import sys
+if len(sys.argv) < 2:
+    print("Usage : python scores-main.py <s1> <s2> ...")
+    sys.exit(1)
 
-# Calculate simple interest
-SI = (P * R * T) / 100
+scores = [float(x) for x in sys.argv[1:]]
+total = sum(scores)
+avg = total / len(scores)
 
-# Display the result
-print(f"\nSimple Interest = {SI:.2f}")
+print("Scores :", scores)
+print("Sum :", total)
+print("Average :", avg)
